@@ -2,7 +2,7 @@
   "name": "temposs",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Juan-7u7/TempOp.git",
+  "homepage": "https://Juan-7u7.github.io/TempOp",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
