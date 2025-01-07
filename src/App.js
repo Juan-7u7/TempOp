@@ -13,7 +13,7 @@ import Mensajesm from './pages/mobile/mensajesm';
 import Empleo from './pages/empleo';
 import Vacantes from './pages/mobile/vacantes';
 import Publicaciones from './pages/publicaciones';
-import 'leaflet/dist/leaflet.css';
+// import 'leaflet/dist/leaflet.css';
 
 
 function App() {
