@@ -9,7 +9,12 @@ import Welcome from './pages/welcome';
 import Inicio from './pages/inicio';
 import Perfil from './pages/perfil';
 import Mensajes from './pages/mensajes';
-import Mensajesm from './pages/mensajesm';
+import Mensajesm from './pages/mobile/mensajesm';
+import Empleo from './pages/empleo';
+import Vacantes from './pages/mobile/vacantes';
+import Publicaciones from './pages/publicaciones';
+import 'leaflet/dist/leaflet.css';
+
 
 function App() {
   const location = useLocation();
@@ -17,11 +22,14 @@ function App() {
   const isPerfilPage = location.pathname === '/perfil';
   const isMensajesPage = location.pathname === '/mensajes';
   const isMensajesmPage = location.pathname === '/mensajesm';
+  const isEmpleoPage = location.pathname === '/empleo';
+  const isVacantesPage = location.pathname === '/vacantes';
+  const isPublicaciones = location.pathname === '/publicaciones';
 
   return (
     <div className="App" style={{ backgroundColor: '#ffe4ec' }}>
       {/* Barra de navegación condicional */}
-      {isWelcomePage || isPerfilPage || isMensajesPage || isMensajesmPage  ? <Navbaru /> : <ResponsiveAppBar />}
+      {isWelcomePage || isPerfilPage || isMensajesPage || isMensajesmPage || isEmpleoPage  || isVacantesPage || isPublicaciones ? <Navbaru /> : <ResponsiveAppBar />}
 
       {/* Configuración de rutas */}
       <Routes>
@@ -32,6 +40,9 @@ function App() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/mensajes" element={<Mensajes />} />
         <Route path="/mensajesm" element={<Mensajesm />} />
+        <Route path="/empleo" element={<Empleo />} />
+        <Route path="/vacantes" element={<Vacantes />} />
+        <Route path="/publicaciones" element={<Publicaciones />} />
       </Routes>
     </div>
   );

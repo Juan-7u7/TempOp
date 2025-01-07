@@ -1,0 +1,27 @@
+/* Contenedor principal del mapa */
+.map-container {
+    margin: 20px auto; /* Centra el mapa horizontalmente */
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    border: 2px solid #ddd; /* Borde decorativo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    overflow: hidden; /* Mantener los bordes limpios */
+  }
+  
+  /* Estilo del mapa responsivo */
+  .map {
+    height: 70vh; /* 70% del alto de la ventana */
+    width: 100%; /* Ocupa todo el ancho disponible */
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .map-container {
+      margin: 10px; /* Reduce el margen en pantallas pequeñas */
+    }
+  
+    .map {
+      height: 50vh; /* Reduce el alto del mapa en móviles */
+    }
+  }
+  

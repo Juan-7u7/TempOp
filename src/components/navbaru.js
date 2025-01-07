@@ -54,10 +54,31 @@ function ResponsiveAppBar() {
   
 
   const handleSearch = () => {
-    if (searchQuery.toLowerCase() === 'trabajo') {
-      // Redirige a la página trabajo.js
+    const searchTerms = [
+      'vacante', 'puesto libre', 'cargo disponible', 'plaza', 'apertura', 'oferta', 
+      'lugar disponible', 'plaza vacante', 'espacio libre', 'posición abierta', 'asignación pendiente',
+      'empleo', 'ocupación', 'trabajo', 'profesión', 'puesto', 'cargo', 'oficio', 'tarea', 
+      'posición laboral', 'labor', 'función', 'actividad profesional',
+      'trabajo', 'labor', 'ocupación', 'oficio', 'actividad', 'esfuerzo', 'tarea', 'jornada', 
+      'chamba', 'curro', 'faena',
+      'oportunidad', 'posibilidad', 'ventaja', 'alternativa', 'propuesta', 'perspectiva', 
+      'chance', 'ocasion', 'momento', 'oferta', 'beneficio', 'apertura',
+      'posición', 'cargo', 'rol', 'título', 'escalón', 'categoría', 'lugar', 'nivel', 'función', 'destino'
+    ];
+    
+    const query = searchQuery.toLowerCase();
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent); // Detecta si es un dispositivo móvil
+  
+    if (searchTerms.some(term => query.includes(term))) {
+      if (isMobile) {
+        navigate('/vacantes'); // Redirige a la página específica para móviles
+      } else {
+        navigate('/empleo'); // Redirige a la página estándar para escritorio
+      }
     }
   };
+  
+  
 
   return (
     <AppBar position="static" sx={{ backgroundColor: '#E966A0' }}>
@@ -229,9 +250,9 @@ function ResponsiveAppBar() {
             },
           }}
         >
-          <MenuItem>Notificación 1</MenuItem>
-          <MenuItem>Notificación 2</MenuItem>
-          <MenuItem>Notificación 3</MenuItem>
+          <MenuItem>Sin Notificaciones</MenuItem>
+          {/* <MenuItem>Notificación 2</MenuItem>
+          <MenuItem>Notificación 3</MenuItem> */}
         </Menu>
       </MenuItem>
     ) : (

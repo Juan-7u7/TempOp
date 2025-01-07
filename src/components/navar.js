@@ -76,7 +76,18 @@ function ResponsiveAppBar() {
                         {page}
                       </Link>
                     ) : (
-                      page
+                      <a
+                        href={
+                          page === '¿Quienes somos?'
+                            ? '#quienes-somos'
+                            : page === 'Preguntas Frecuentes'
+                            ? '#preguntas-frecuentes'
+                            : '#contacto'
+                        }
+                        style={{ color: '#E966A0', textDecoration: 'none' }}
+                      >
+                        {page}
+                      </a>
                     )}
                   </Typography>
                 </MenuItem>
@@ -121,7 +132,18 @@ function ResponsiveAppBar() {
                     {page}
                   </Link>
                 ) : (
-                  page
+                  <a
+                    href={
+                      page === '¿Quienes somos?'
+                        ? '#quienes-somos'
+                        : page === 'Preguntas Frecuentes'
+                        ? '#preguntas-frecuentes'
+                        : '#contacto'
+                    }
+                    style={{ color: '#FFE1FF', textDecoration: 'none' }}
+                  >
+                    {page}
+                  </a>
                 )}
               </Button>
             ))}

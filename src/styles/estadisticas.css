@@ -1,0 +1,44 @@
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espaciado entre gráficos */
+  padding: 20px;
+}
+
+.chart-wrapper {
+  width: 100%;
+  max-width: 400px; /* Ancho máximo para pantallas grandes */
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.chart-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.delete-button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-button:hover {
+  background-color: #e63946;
+}
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    max-width: 100%; /* En móviles, ocupa el ancho completo */
+  }
+}

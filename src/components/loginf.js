@@ -3,11 +3,23 @@ import { Box, TextField, Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 function FormularioInicioSesion() {
-  const navigate = useNavigate(); // Hook para la navegación
+  const navigate = useNavigate();
+  const [formData, setFormData] = React.useState({
+    usuario: '',
+    contraseña: ''
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/welcome'); // Redirige a la página "welcome.js"
+    navigate('/welcome');
   };
 
   return (
@@ -23,12 +35,12 @@ function FormularioInicioSesion() {
         p: { xs: 2, sm: 3 },
         boxShadow: { xs: 1, md: 3 },
         borderRadius: 2,
-        backgroundColor: '#FFC4E1',  // Color de fondo igual al fondo principal de la página
-        color: '#FFE1FF'  // Color de texto para que contraste con el fondo oscuro
+        backgroundColor: '#FFC4E1', 
+        color: '#FFE1FF'
       }}
       onSubmit={handleSubmit}
     >
-      <Typography variant="h5" sx={{ color:'#3c3c3c',textAlign: 'center', mb: 2 }}>
+      <Typography variant="h5" sx={{ color:'#3c3c3c', textAlign: 'center', mb: 2 }}>
         Inicio de Sesión
       </Typography>
 
@@ -36,14 +48,21 @@ function FormularioInicioSesion() {
         label="Usuario"
         variant="outlined"
         name="usuario"
-        sx={{ backgroundColor: '#EAEAEA', color: '#FFE1FF' }} // Ajusta el color de fondo del campo
+        value={formData.usuario}
+        onChange={handleChange}
+        sx={{ backgroundColor: '#EAEAEA' }}
+        required
       />
+
       <TextField
         label="Contraseña"
         variant="outlined"
         name="contraseña"
         type="password"
-        sx={{ backgroundColor: '#EAEAEA', color: '#FFE1FF' }} // Ajusta el color de fondo del campo
+        value={formData.contraseña}
+        onChange={handleChange}
+        sx={{ backgroundColor: '#EAEAEA' }}
+        required
       />
 
       <Button
@@ -51,9 +70,9 @@ function FormularioInicioSesion() {
         variant="contained"
         sx={{
           mt: 2,
-          backgroundColor: '#F07DEA', // Color secundario
+          backgroundColor: '#F07DEA',
           '&:hover': {
-            backgroundColor: '#6A4FB5' // Color al pasar el mouse (más oscuro del secundario)
+            backgroundColor: '#6A4FB5'
           }
         }}
       >
