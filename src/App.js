@@ -1,25 +1,9 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const location = useLocation();
-  const isWelcomePage = location.pathname === '/welcome';
-  const isPerfilPage = location.pathname === '/perfil';
-  const isMensajesPage = location.pathname === '/mensajes';
-  const isMensajesmPage = location.pathname === '/mensajesm';
-  const isEmpleoPage = location.pathname === '/empleo';
-  const isVacantesPage = location.pathname === '/vacantes';
-  const isPublicaciones = location.pathname === '/publicaciones';
-
   return (
-    <BrowserRouter basename="/TempOp">
+    <HashRouter>
       <div className="App" style={{ backgroundColor: '#ffe4ec' }}>
-        {/* Barra de navegación condicional */}
-        {isWelcomePage || isPerfilPage || isMensajesPage || isMensajesmPage || isEmpleoPage || isVacantesPage || isPublicaciones ? (
-          <Navbaru />
-        ) : (
-          <ResponsiveAppBar />
-        )}
-
         {/* Configuración de rutas */}
         <Routes>
           <Route path="/" element={<Inicio />} />
@@ -34,7 +18,7 @@ function App() {
           <Route path="/publicaciones" element={<Publicaciones />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
