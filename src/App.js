@@ -1,9 +1,41 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import './styles/stilo.css';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import ResponsiveAppBar from './components/navar';
+import Navbaru from './components/navbaru';
+import LoginP from './pages/loginP';
+import RegisterP from './pages/registerP';
+import Welcome from './pages/welcome';
+import Inicio from './pages/inicio';
+import Perfil from './pages/perfil';
+import Mensajes from './pages/mensajes';
+import Mensajesm from './pages/mobile/mensajesm';
+import Empleo from './pages/empleo';
+import Vacantes from './pages/mobile/vacantes';
+import Publicaciones from './pages/publicaciones';
+// import 'leaflet/dist/leaflet.css';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
+  const location = useLocation();
+  const isWelcomePage = location.pathname === '/welcome';
+  const isPerfilPage = location.pathname === '/perfil';
+  const isMensajesPage = location.pathname === '/mensajes';
+  const isMensajesmPage = location.pathname === '/mensajesm';
+  const isEmpleoPage = location.pathname === '/empleo';
+  const isVacantesPage = location.pathname === '/vacantes';
+  const isPublicaciones = location.pathname === '/publicaciones';
+
   return (
-    <HashRouter>
+    <BrowserRouter basename="/TempOp">
       <div className="App" style={{ backgroundColor: '#ffe4ec' }}>
+        {/* Barra de navegación condicional */}
+        {isWelcomePage || isPerfilPage || isMensajesPage || isMensajesmPage || isEmpleoPage || isVacantesPage || isPublicaciones ? (
+          <Navbaru />
+        ) : (
+          <ResponsiveAppBar />
+        )}
+
         {/* Configuración de rutas */}
         <Routes>
           <Route path="/" element={<Inicio />} />
@@ -18,7 +50,7 @@ function App() {
           <Route path="/publicaciones" element={<Publicaciones />} />
         </Routes>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
