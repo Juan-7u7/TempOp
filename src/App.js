@@ -1,6 +1,7 @@
 import './App.css';
 import './styles/stilo.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
+// import { Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import ResponsiveAppBar from './components/navar';
 import Navbaru from './components/navbaru';
 import LoginP from './pages/loginP';
