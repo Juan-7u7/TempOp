@@ -14,7 +14,6 @@ import Empleo from './pages/empleo';
 import Vacantes from './pages/mobile/vacantes';
 import Publicaciones from './pages/publicaciones';
 // import 'leaflet/dist/leaflet.css';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
   const location = useLocation();
